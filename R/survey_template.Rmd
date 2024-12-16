@@ -26,6 +26,17 @@ id_curr <- params$id_curr
 
 .dat <- redcap_read_in()
 .out <- build_survey_tables(.dat, .id = id_curr)
+```
+
+```{r stop_rendering, echo = FALSE}
+if(is.null(.out)){
+  cat("### ID NOT FOUND - DOUBLE CHECK REDCAP ###")
+  knitr::knit_exit()
+}
+```
+
+```{r, include = F}
+
 .dat_curr <- .dat[.dat$record_id == id_curr,]
 
 ```
@@ -298,7 +309,7 @@ if(!is.list(.out[[.var]][["form"]])){
 ```
 
 
-
+[Open Full Survey](./survey_template.html){target="_blank"}
 
 
 

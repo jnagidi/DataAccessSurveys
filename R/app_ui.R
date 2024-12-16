@@ -47,9 +47,9 @@ app_ui <- function(request) {
           # study select input at top of page
           textInput("request_id", "Enter request", ""),
           actionButton("build_survey", "Build Survey"),
-          # actionButton("generatePDF", "Generate PDF"),
-          # downloadButton("downloadPDF", "Download PDF"),
-          actionButton("new_tab", "New Tab for Printing")
+          actionButton("generatePDF", "Generate PDF"),
+          downloadButton("downloadPDF", "Download PDF")#,
+          # actionButton("new_tab", "New Tab for Printing")
         )
       )
     )
@@ -82,7 +82,7 @@ golem_add_external_resources <- function(){
   )
   
   #Add js
-  golem::add_js_file("custom.js")
+  #golem::add_js_file("custom.js")
   
   #Head tags including favicon
   tags$head(

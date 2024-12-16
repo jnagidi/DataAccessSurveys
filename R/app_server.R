@@ -37,37 +37,37 @@ app_server <- function(input, output, session) {
       })
   })
   
-  # observeEvent(input$generatePDF, {
-  #   shiny::req(html_ready())
-  #   
-  #   #Paths and pagedown
-  #   html_path <- paste0(out_dir, "/survey_template.html")
-  #   pdf_path <- paste0(out_dir, "/survey_template.pdf")
-  #   pagedown::chrome_print(input = html_path, output = pdf_path)
-  #   
-  #   # Provide the PDF for download
-  #   showNotification("PDF generated! You can now download it.", type = "message")
-  # })
-  #   
-  # 
-  # # Download the PDF file
-  # output$downloadPDF <- downloadHandler(
-  #   filename = function() {
-  #     paste0("Access_IDCURR_", Sys.Date(), ".pdf")
-  #   },
-  #   content = function(file) {
-  #     pdf_path <- file.path(out_dir, "survey_template.pdf")
-  #     req(file.exists(pdf_path))
-  #     file.copy(pdf_path, file)
-  #   }
-  # )
-  
-  #New tab
-  observeEvent(input$new_tab, {
+  observeEvent(input$generatePDF, {
     shiny::req(html_ready())
-    html_path <- file.path(out_dir, "survey_template.html")
-    session$sendCustomMessage(type = "open_tab", message = paste0("output/survey_template.html"))
+
+    #Paths and pagedown
+    html_path <- paste0(out_dir, "/survey_template.html")
+    pdf_path <- paste0(out_dir, "/survey_template.pdf")
+    pagedown::chrome_print(input = html_path, output = pdf_path)
+
+    # Provide the PDF for download
+    showNotification("PDF generated! You can now download it.", type = "message")
   })
+
+
+  # Download the PDF file
+  output$downloadPDF <- downloadHandler(
+    filename = function() {
+      paste0("Access_IDCURR_", Sys.Date(), ".pdf")
+    },
+    content = function(file) {
+      pdf_path <- file.path(out_dir, "survey_template.pdf")
+      req(file.exists(pdf_path))
+      file.copy(pdf_path, file)
+    }
+  )
+  
+  # #New tab
+  # observeEvent(input$new_tab, {
+  #   shiny::req(html_ready())
+  #   html_path <- file.path(out_dir, "survey_template.html")
+  #   session$sendCustomMessage(type = "open_tab", message = paste0("output/survey_template.html"))
+  # })
    
 }
   

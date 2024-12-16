@@ -53,6 +53,9 @@ redcap_logging <- function(rcon, ..., error_handling = getOption("redcap_error_h
 build_survey_tables <- function(.dat_orig, .id, id_col = "record_id",
                                 dict_col = data_dict_col_names, dict_md = data_dict_md_names, dict_fact = data_dict_factor){
   
+  #Catch to return NULL
+  if(!(.id %in% .dat_orig[[id_col]])) return(NULL)
+  
   #Initialize to get a single survey
   .dat <- .dat_orig[.dat_orig[[id_col]] == .id,]
   .out <- list()
