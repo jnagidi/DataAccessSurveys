@@ -1,4 +1,4 @@
 library(testthat)
-library(DataAcessSurveys)
+library(DataAccessSurveys)
 
-test_check("DataAcessSurveys")
+test_check("DataAccessSurveys")

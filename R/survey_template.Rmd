@@ -3,6 +3,8 @@ title: "ADRC Participant Access Request"
 output: 
   html_document:
     mathjax: null
+params:
+  id_curr: NULL
   
 ---
 
@@ -20,7 +22,7 @@ suppressPackageStartupMessages({
 
 R.utils::sourceDirectory(paste0(getwd()), modifiedOnly = FALSE)
 
-id_curr <- 31
+id_curr <- params$id_curr
 
 .dat <- redcap_read_in()
 .out <- build_survey_tables(.dat, .id = id_curr)
