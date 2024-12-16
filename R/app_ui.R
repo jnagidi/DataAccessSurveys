@@ -47,8 +47,9 @@ app_ui <- function(request) {
           # study select input at top of page
           textInput("request_id", "Enter request", ""),
           actionButton("build_survey", "Build Survey"),
-          actionButton("generatePDF", "Generate PDF"),
-          downloadButton("downloadPDF", "Download PDF")
+          # actionButton("generatePDF", "Generate PDF"),
+          # downloadButton("downloadPDF", "Download PDF"),
+          actionButton("new_tab", "New Tab for Printing")
         )
       )
     )
@@ -80,12 +81,15 @@ golem_add_external_resources <- function(){
     'output', app_sys('output')
   )
   
+  #Add js
+  golem::add_js_file("custom.js")
+  
   #Head tags including favicon
   tags$head(
     favicon(),
     bundle_resources(
       path = app_sys('app/www'),
-      app_title = 'ADRC ADI GeoCoder'
+      app_title = 'ADRC Request Surveys'
     ),
     
     # Add here other external resources

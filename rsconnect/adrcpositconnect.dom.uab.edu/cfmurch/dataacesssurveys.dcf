@@ -1,0 +1,12 @@
+name: dataacesssurveys
+title: DataAcessSurveys
+username: cfmurch
+account: cfmurch
+server: adrcpositconnect.dom.uab.edu
+hostUrl: https://adrcpositconnect.dom.uab.edu/__api__
+appId: 11
+bundleId: 46
+url: https://adrcpositconnect.dom.uab.edu/content/22495ef3-1224-4140-a1bf-0fdca162c38f/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
