@@ -1,0 +1,683 @@
+﻿"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+record_id,participant_access_request,,text,"<div style=""font-size: 13px"">Initial Visit Record ID",,,,,,y,,y,,,,,
+partacc_img,participant_access_request,,descriptive,"<div style=""background:#F3F3F3; padding-bottom:00px; margin-left: auto; margin-right:auto; display: block"">",,,,,,,,,,,,,
+partacc_intro,participant_access_request,,descriptive,"<div style=""margin-left: 00px"">
+
+<p style=""text-align:center; font-size:36px; margin-left:3%; margin-right:3%"">Resources Access Questionnaire</p>
+
+<p style=""text-align:justify; font-size:22px; margin-left:3%; margin-right:3%"">This short questionnaire requests key information about your study and will help the ADRC best support you and your project.  If you have any questions, please contact us at <a href=""alz@uabmc.edu? subject=Question ADRC Resource Access"" style=""font-size:22px"">alz@uabmc.edu</a>.
+</p>
+
+<p style=""text-align:left; font-style:italic; font-size:16px; margin-left:3%; margin-right:3%"">UAB Alzheimer's Disease Research Center, IRB Protocol 30000169</p>
+
+ </div>",,,,,,,,,,,,,
+partacc_goal_details,participant_access_request,"<div style=""padding:5px; border: solid #000000"">
+
+<div style=""font-size: 28px; text-align: center; "">Investigator and Project Summary</div>
+
+</div>",descriptive,"<p> </p> <div style=""font-size: 26px; text-align: center; margin-left: 3%;"">What is the primary goal of this request?</div> <p> </p><div style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_goal}</div> <div style=""font-size: 18px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_goal_note}{partacc_goal_date}</div> <p> </p>",,,,,,,,,,,,,
+partacc_goal,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Goal of this request</div>
+
+","1, <font size=""4"">Formal request for ADRC data, biospecimens, and/or participant access<br /> | 2, <font size=""4"">Preliminary inquiry to discuss plans/feasibility with ADRC investigators<br /> | 3, <font size=""4"">Request for a letter of support for a grant application",,,,,,,y,,,,,
+partacc_goal_date,participant_access_request,,text,"Grant deadline:",,,date_mdy,,,,[partacc_goal]=3,,RH,,,,
+partacc_goal_note,participant_access_request,,descriptive,"Grant deadline:  &nbsp",,,,,,,[partacc_goal]=3,,,,,,
+partacc_study_title,participant_access_request,,text,"
+
+<div style=""font-size: 22px"">Project Title
+</div>
+
+",,,,,,,,y,,,,,
+partacc_pi_details,participant_access_request,,descriptive,"<p> </p> <div style=""font-size: 26px; text-align: center; margin-left: 0%;"">Principal Investigator</div> <p> </p> <table style=""font-size: 18px; border-collapse: collapse; width: 94%; margin-left: 3%"" border=""1""> <tbody> <tr> <td style=""width: 23.3009%;"">Name</td> <td style=""width: 73.4459%;"">{partacc_pi_name}</td> </tr> <tr> <td style=""width: 23.3009%;"">Title</td> <td style=""width: 73.4459%;"">{partacc_pi_title}</td> </tr> <tr> <td style=""width: 23.3009%;"">Institution</td> <td style=""width: 73.4459%;"">{partacc_pi_inst}</td> </tr><tr> <td style=""width: 23.3009%;"">Institution Type</td> <td style=""width: 73.4459%;"">{partacc_pi_inst_type}</td> </tr>  <tr> <td style=""width: 23.3009%;"">Email</td> <td style=""width: 73.4459%;"">{partacc_pi_email}</td> </tr> <tr> <td style=""width: 23.3009%;"">Phone</td> <td style=""width: 73.4459%;"">{partacc_pi_phone}</td> </tr> </tbody> </table> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%;"">Is there a Co-PI?         {partacc_copi_yn}</p>",,,,,,,,,,,,,
+partacc_pi_name,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">PI Name
+
+
+",,,,,,,,y,RH,,,,
+partacc_pi_title,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">PI Title
+</div>
+
+",,,,,,,,,RH,,,,
+partacc_pi_inst,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">PI Institution
+</div>
+
+",,,,,,,,,RH,,,,
+partacc_pi_inst_type,participant_access_request,,dropdown,"
+
+<div style=""font-size: 18px"">Type of Institution
+
+
+","1, Academic Center | 2, Non-Profit Organization | 3, Private Company",,,,,,,y,RH,,,,
+partacc_pi_email,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">PI Email
+</div>
+
+",,,email,,,,,,RH,,,,
+partacc_pi_phone,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">PI Phone Contact
+</div>
+
+",,,phone,,,,,,RH,,,,
+partacc_copi_yn,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Is there a Co-PI?
+
+
+","1, <font size=""4"">Yes | 0, <font size=""4"">No",,,,,,,,RH,,,,
+partacc_copi_details,participant_access_request,,descriptive,"<p> </p> <div style=""font-size: 26px; text-align: center;"">Co-Principal Investigator</div> <div style=""font-size: 26px; text-align: center;""> </div> <table style=""font-size: 18px; border-collapse: collapse; width: 94%; margin-left: 3%;"" border=""1""> <tbody> <tr> <td style=""width: 23.3009%;"">Name</td> <td style=""width: 73.4459%;"">{partacc_copi_name}</td> </tr> <tr> <td style=""width: 23.3009%;"">Title</td> <td style=""width: 73.4459%;"">{partacc_copi_title}</td> </tr> <tr> <td style=""width: 23.3009%;"">Institution</td> <td style=""width: 73.4459%;"">{partacc_copi_inst}</td> </tr> <tr> <td style=""width: 23.3009%;"">Email</td> <td style=""width: 73.4459%;"">{partacc_copi_email}</td> </tr> <tr> <td style=""width: 23.3009%;"">Phone</td> <td style=""width: 73.4459%;"">{partacc_copi_phone}</td> </tr> </tbody> </table> <p> </p> <p> </p>",,,,,,,[partacc_copi_yn]=1,,,,,,
+partacc_copi_name,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Co-PI Name
+</div>
+
+",,,,,,,[partacc_copi_yn]=1,,RH,,,,
+partacc_copi_title,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Co-PI Title
+</div>
+
+",,,,,,,[partacc_copi_yn]=1,,RH,,,,
+partacc_copi_inst,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Co-PI Institution
+</div>
+
+",,,,,,,[partacc_copi_yn]=1,,RH,,,,
+partacc_copi_email,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Co-PI Email
+</div>
+
+",,,email,,,,[partacc_copi_yn]=1,,RH,,,,
+partacc_copi_phone,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Co-PI Phone Contact
+</div>
+
+",,,phone,,,,[partacc_copi_yn]=1,,RH,,,,
+partacc_study_title_field,participant_access_request,,descriptive,"<p> </p> <div style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%"">Project Title</div> <p> </p> <div style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_study_title}</div> <p> </p>",,,,,,,,,,,,,
+partacc_aims_details,participant_access_request,,descriptive,"
+<div style=""font-size: 26px; text-align: center"">Hypothesis and Aims
+
+",,,,,,,,,,,,," @HIDDEN"
+partacc_hypoth_aims,participant_access_request,,descriptive,"<p> </p> <table style=""border-collapse: collapse; width: 94%; margin-left: 3%;"" border=""1""> <tbody> <tr> <td style=""width: 48.3734%; text-align: center; vertical-align: top;""> <p style=""font-size: 24px; text-align: center;"">Hypothesis</p> <p style=""font-size: 18px; text-align: center;"">What is the overarching<br />hypothesis of this project?</p> </td> <td style=""width: 48.3734%; text-align: center; vertical-align: top;""> <p style=""font-size: 24px; text-align: center;"">Specific Aims</p> <p style=""font-size: 18px; text-align: center;"">What are the project's<br />specific aims?</p> </td> </tr> <tr> <td style=""width: 48.3734%;"">{partacc_hypoth}</td> <td style=""width: 48.3734%;"">{partacc_aims}</td> </tr> </tbody> </table>",,,,,,,,,,,,,
+partacc_hypoth,participant_access_request,,notes,"
+
+<div style=""font-size: 18px"">Hypothesis</div>
+<div style=""font-size: 16px"">&nbsp &nbsp What overarching hypothesis does this 
+&nbsp &nbsp  project propose to test? 
+</div>
+
+",,,,,,,,,RH,,,,
+partacc_aims,participant_access_request,,notes,"
+
+<div style=""font-size: 18px"">Specific Aims</div>
+<div style=""font-size: 16px"">&nbsp &nbsp List the specific aims of the project. 
+</div>
+
+",,,,,,,,,RH,,,,
+partacc_theme_fund_details,participant_access_request,,descriptive,"<div style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%"">ADRC Theme and Funding
+
+<div style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">The theme of the UAB ADRC is 'Deep South disparities 
+in Alzheimer's disease and related dementias'</div> 
+<div style=""font-size: 18px; margin-left: 3%; margin-right: 3%"">This includes disparities related to Black or African American race,
+medical comorbidities at higher prevalence in the Deep South, 
+other geographic factors, etc.  
+
+Studies falling under this theme are desirable, 
+although direct connection to this theme is not required for 
+all studies using ADRC resources.
+
+<p> </p> <p style=""font-size: 22px; text-align: center; margin-left: 3%; margin-right: 3%;"">Does your study relate to Deep South disparities?</p> <div style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_theme_yn}</div> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_theme_details_note}</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_theme_details}</p> <p> </p>
+",,,,,,,,,,,,,
+partacc_theme_yn,participant_access_request,,radio,"
+<div style=""font-size: 18px"">Does your study relate to Deep South disparities?
+
+","1, <font size=""4"">Yes | 2, <font size=""4"">No",,,,,,,,RH,,,,
+partacc_theme_details_note,participant_access_request,,descriptive,"Please provide details",,,,,,,[partacc_theme_yn]=1,,,,,,
+partacc_theme_details,participant_access_request,,notes,"
+<div style=""font-size: 18px"">If yes, please provide details.
+
+",,,,,,,[partacc_theme_yn]=1,,,,,,
+partacc_fund,participant_access_request,,descriptive,"<p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">Is this project currently funded?</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_fund_source}</p> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_fund_entity_note1}</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_fund_entity}</p> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_fund_entity_note2}     {partacc_fund_details}</p> <p> </p>",,,,,,,,,,,,,
+partacc_fund_addtnl,participant_access_request,,descriptive,"<p> </p><p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">Is there an additional funding source?         {partacc_fund_2nd}</p><p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">{partacc_fund_2nd_note1}</p> <p style=""font-size: 20px; text-align: center; margin-left:3%; margin-right: 3%"">{partacc_fund_2nd_entity}</p> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_fund_2nd_note2}     {partacc_fund_2nd_details}</p> <p> </p> ",,,,,,,[partacc_fund_source]=1,,,,,,
+partacc_fund_source,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Funding Source</div>
+
+","1, <font size=""4"">This project is already funded <br /> | 2, <font size=""4"">Not yet funded<br />",,,,,,,,,,,,
+partacc_fund_entity_note1,participant_access_request,,descriptive,"Funding Entity",,,,,,,[partacc_fund_source]=1,,,,,,
+partacc_fund_entity,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Funding Entity</div>
+
+","1, <font size=""4"">NIH funded | 2, <font size=""4"">Extramural (non-NIH) entity | 3, <font size=""4"">Intramurally funded",,,,,,[partacc_fund_source]=1,,RH,,,,
+partacc_fund_entity_note2,participant_access_request,,descriptive,"Sponsor Name & Grant Number",,,,,,,[partacc_fund_source]=1,,,,,,
+partacc_fund_details,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Grant Number / Entity Details</div>
+
+",,,,,,,[partacc_fund_source]=1,,,,,,
+partacc_fund_2nd,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Is there an additional funding source?
+
+
+","1, <font size=""4"">Yes | 0, <font size=""4"">No",,,,,,[partacc_fund_source]=1,,RH,,,,
+partacc_fund_2nd_note1,participant_access_request,,descriptive,"Additional Funding Entity",,,,,,,"[partacc_fund_2nd]=1 AND [partacc_fund_2nd]!=""""",,,,,,
+partacc_fund_2nd_entity,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Funding Entity</div>
+
+","1, <font size=""4"">NIH funded | 2, <font size=""4"">Extramural (non-NIH) entity | 3, <font size=""4"">Intramurally funded",,,,,,"[partacc_fund_2nd]=1 AND [partacc_fund_2nd]!=""""",,RH,,,,
+partacc_fund_2nd_note2,participant_access_request,,descriptive,"Sponsor Name & Grant Number",,,,,,,"[partacc_fund_2nd]=1 AND [partacc_fund_2nd]!=""""",,,,,,
+partacc_fund_2nd_details,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Grant Number / Entity Details</div>
+
+",,,,,,,"[partacc_fund_2nd]=1 AND [partacc_fund_2nd]!=""""",,,,,,
+partacc_fund_2,participant_access_request,,descriptive,"<p> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">Do you have IRB approval for this project</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">or been in discussion with the IRB?</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_irb_contact}</p> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left: -3%; margin-right: 3%"">{partacc_irb_note}     {partacc_irb_name}</p> <p> </p>",,,,,,,,,,,,,
+partacc_irb_contact,participant_access_request,,radio,"Contacted IRB?","1, <font size=""4"">Yes, we have IRB approval for this project | 2, <font size=""4"">We have contacted the IRB for discussion or are pending approval | 3, <font size=""4"">We have not yet discussed this project with the IRB",,,,,,,,,,,,
+partacc_irb_note,participant_access_request,,descriptive,"IRB Protocol #",,,,,,,"[partacc_irb_contact]=1 OR [partacc_irb_contact]=2",,,,,,
+partacc_irb_name,participant_access_request,,text,"IRB Contact name",,,,,,,"[partacc_irb_contact]=1 OR [partacc_irb_contact]=2",,,,,,
+partacc_pop_details,participant_access_request," <div style=""padding:5px; border: solid #000000"">
+
+<div style=""font-size: 28px; text-align: center; "">Sample Size & Profile</div>
+
+</div>",descriptive," <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">Check all that apply and enter target group sample size</p> <p> </p> <div style=""font-size: 26px; text-align: top; margin-left: 3%; margin-right: 3%"">{partacc_target_pop}</div> <p> </p> <p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_total_note}     {partacc_total_note_2}</p> <p> </p> <p style=""font-size: 20px; text-align: center; margin-left:3%; margin-right: 3%"">Please specify any other particular inclusion/exclusion criteria</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%"">{partacc_target_pop_details}</p>",,,,,,,,,,,,,
+partacc_target_pop,participant_access_request,,checkbox,"
+
+<div style=""font-size: 18px"">Target Population</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Check all that apply 
+</div>
+
+","1, <font size=""4"">Cognitively normal controls, age > 55 {partacc_norm_n} | 2, <font size=""4"">Preclinical Alzheimer's disease (i.e. biomarker positive, cognitively normal) {partacc_preclin_n} | 3, <font size=""4"">Mild cognitive impairment {partacc_mci_n} | 4, <font size=""4"">Mild dementia {partacc_mild_dem_n} | 5, <font size=""4"">Moderate to severe dementia {partacc_sev_dem_n}",,,,,,,y,,,,,
+partacc_target_pop_details,participant_access_request,,notes,"
+
+<div style=""font-size: 18px"">Comments</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Specify any other criteria  
+&nbsp &nbsp for inclusion/exclusion
+</div>
+
+",,,,,,,,,,,,,
+partacc_norm_n,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Sample Size - Cognitively Normal Controls</div>
+
+",,,,,,,[partacc_target_pop(1)]=1,y,,,,,
+partacc_preclin_n,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Sample Size - Preclinical Alzheimer's</div>
+
+",,,,,,,[partacc_target_pop(2)]=1,y,,,,,
+partacc_mci_n,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Sample Size - Mild Impairment</div>
+
+",,,,,,,[partacc_target_pop(3)]=1,y,,,,,
+partacc_mild_dem_n,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Sample Size - Mild Dementia</div>
+
+",,,,,,,[partacc_target_pop(4)]=1,y,,,,,
+partacc_sev_dem_n,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Sample Size - Moderate/Severe Dementia</div>
+
+",,,,,,,[partacc_target_pop(5)]=1,y,,,,,
+partacc_total_note,participant_access_request,,descriptive,"Total Sample Size",,,,,,,"[partacc_target_pop(1)] = 1 OR
+[partacc_target_pop(2)] = 1 OR
+[partacc_target_pop(3)] = 1 OR
+[partacc_target_pop(4)] = 1 OR
+[partacc_target_pop(5)] = 1",,,,,,
+partacc_total_n,participant_access_request,,calc,"
+
+<div style=""font-size: 18px"">Total Sample Size</div>
+
+","sum([partacc_norm_n],
+[partacc_preclin_n], 
+[partacc_mci_n],
+[partacc_mild_dem_n],
+[partacc_sev_dem_n])",,,,,,"[partacc_target_pop(1)] = 1 OR
+[partacc_target_pop(2)] = 1 OR
+[partacc_target_pop(3)] = 1 OR
+[partacc_target_pop(4)] = 1 OR
+[partacc_target_pop(5)] = 1",,,,,," @HIDDEN"
+partacc_total_note_2,participant_access_request,,descriptive,[partacc_total_n],,,,,,,"[partacc_target_pop(1)] = 1 OR
+[partacc_target_pop(2)] = 1 OR
+[partacc_target_pop(3)] = 1 OR
+[partacc_target_pop(4)] = 1 OR
+[partacc_target_pop(5)] = 1",,,,,,
+partacc_minor_field,participant_access_request,,descriptive,"<p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%"">Minorities and Stratification<br /><br /></p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">The ADRC cohort is ~40% Black or African American <br />Does your study test specific hypotheses about B/AA disparities, <br />or are there any other issues related to race?<br />{partacc_minor}</p> <p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;""> </p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">Are there other key variables upon which you plan to stratify? <br />e.g. presence/absence of specific symptoms/findings<br />{partacc_stratify_yn}</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">{partacc_stratify_note}</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">{partacc_stratify}</p>",,,,,,,,,,,,,
+partacc_minor,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Minority Populations</div>
+<div style=""font-size: 16px"">&nbsp &nbsp The ADRC cohort is ~40% Black or 
+&nbsp &nbsp African American 
+
+&nbsp &nbspDoes your study test specific hypotheses
+&nbsp &nbsp about B/AA disparities, or are there any
+&nbsp &nbsp other issues related to race?
+</div>
+
+","1, <font size=""4"">Yes | 2, <font size=""4"">No",,,,,,,y,RH,,,,
+partacc_stratify_yn,participant_access_request,,radio,"Participant stratify
+
+","1, <font size=""4"">Yes | 2, <font size=""4"">No",,,,,,,y,RH,,,,
+partacc_stratify_note,participant_access_request,,descriptive,"Please provide any details on stratification",,,,,,,[partacc_stratify_yn]=1,,,,,,
+partacc_stratify,participant_access_request,,notes,"
+
+<div style=""font-size: 18px"">Stratification</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Are there other key variables upon which 
+&nbsp &nbsp you plan to stratify enrollment? 
+
+&nbsp &nbsp e.g. presence/absence of specific 
+&nbsp &nbsp symptoms/findings
+</div>
+
+",,,,,,,[partacc_stratify_yn]=1,,,,,,
+partacc_duration,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Recruitment Duration</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Over how many months will you plan
+&nbsp &nbsp to recruit this sample?
+</div>
+
+",,,,,,,,,,,,,
+partacc_stat,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Statistical Support</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Have you discussed study design, power, 
+&nbsp &nbsp and sample size with a statistician?
+</div>
+
+","2, <font size=""4"">I will need to be connected with ADRC statisticians<br />to discuss the design and power of the project | 1, <font size=""4"">I have already consulted with a statistician<br />about the design and power of the project",,,,,,,y,,,,,
+partacc_stat_name_note,participant_access_request,,descriptive,"Name of statistician(s)",,,,,,,[partacc_stat]=1,,,,,,
+partacc_stat_name,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Name of Statistician(s)</div>
+
+",,,,,,,[partacc_stat]=1,,,,,,
+partacc_procedures,participant_access_request,,notes,"
+
+<div style=""font-size: 18px"">Study Procedures</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Briefly describe what will be asked of ADRC 
+&nbsp &nbsp participants who join this study.
+
+&nbsp &nbsp Comment on the time commitment and 
+&nbsp &nbsp and other issues related to the burden
+&nbsp &nbsp of participating. 
+</div>
+
+",,,,,,,,,,,,,
+partacc_compensate,participant_access_request,,radio,"
+
+<div style=""font-size: 18px"">Participant Compensation</div>
+<div style=""font-size: 16px"">&nbsp &nbsp Will subjects be compensated for 
+&nbsp &nbsp participating in your study?
+</div>
+
+","1, <font size=""4"">Yes | 2, <font size=""4"">No",,,,,,,,RH,,,,
+partacc_comp_note,participant_access_request,,descriptive,"Compensation Amount",,,,,,,[partacc_compensate]=1,,,,,,
+partacc_comp_amt,participant_access_request,,text,"
+
+<div style=""font-size: 18px"">Compensation Amount</div>
+
+",,,,,,,[partacc_compensate]=1,,,,,,
+partacc_res_req_details,participant_access_request," <div style=""padding:5px; border: solid #000000"">
+
+<div style=""font-size: 28px; text-align: center; "">Requested ADRC Resources</div>
+
+</div>",descriptive,"<div style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;""> </div> <table style=""border-collapse: collapse; width: 110%; margin-left:10.5%;"" border=""0""> <tbody> <tr> <td style=""width: 35.5981%; text-align: left; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p style=""font-size: 20px;"">Specific Resources</p> <p style=""font-size: 18px; margin-left: 10px;"">Please check which ADRC resources your project will require.</p> </td> <td style=""width: 61.3715%; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p>{partacc_res_req}</p> </td> </tr> </tbody> </table>",,,,,,,,,,,,,
+partacc_res_req,participant_access_request,,checkbox,"Resources requested","1, <font size=""4"">Existing Data<br />Click <a href=""https://docs.google.com/document/d/1czuBDYnv-8UBPdz_hlST8WmPv9p3iAvyfGJjYs8DAbk/"" target=""_blank"" style=""font-size: 1.0em"">here</a> for a list of<br />currently collected data<br /> | 2, <font size=""4"">Human Subjects<br />(participant access)<br /> | 3, <font size=""4"">Biospecimens",,,,,,,y,,,,,
+partacc_data_demog,participant_access_request,,radio,Demographics,"1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_medhist,participant_access_request,,radio,"Medical history","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_socialdet,participant_access_request,,radio,"Social determinants of health","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_neuroexam,participant_access_request,,radio,"Clinical neurological exam","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_cogtest,participant_access_request,,radio,"Cognitive testing","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_mri,participant_access_request,,radio,MRI,"1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_amyloid,participant_access_request,,radio,"Amyloid pet","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_tau,participant_access_request,,radio,"Tau pet","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_image_files,participant_access_request,,radio,"Raw imaging files","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_csf,participant_access_request,,radio,CSF,"1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_bankcsf,participant_access_request,,radio,"Banked CSF","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,," @HIDDEN"
+partacc_data_blood,participant_access_request,,radio,"Blood test results","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_bldbiom,participant_access_request,,radio,"Blood biomarkers","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data_bankblood,participant_access_request,,radio,"Banked blood","1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,," @HIDDEN"
+partacc_data_genetic,participant_access_request,,radio,Genetics,"1, <font size=""3"">Required | 2, <font size=""3"">If available | 3, <font size=""3"">Not needed",,,,,,,,RH,,,,
+partacc_data,participant_access_request,,descriptive,"<p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;"">Existing Data<br /><br /></p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">What exisiting ADRC-collected participant data will you need access to?</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">Note that not all data is available on every participant and <br />requiring some types of data (particularly biomarker and imaging) <br />may reduce the number of available participants.</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;""> </p> <table style=""border-collapse: collapse; width: 94%; height: 180px; margin-left: 3%; margin-right: 3%;"" border=""1""> <tbody> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Demographics<br />(age, race/ethnicity, etc)</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_demog}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Medical history<br />(comorbidities, medications, etc)</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_medhist}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Social determinants of health</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_socialdet}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Clinical neurological exam</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_neuroexam}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Cognitive testing</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_cogtest}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">MRI values</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_mri}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Amyloid PET values</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_amyloid}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Tau PET values</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_tau}</td> </tr><td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Raw MRI/PET image files</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_image_files}</td> </tr><tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">CSF biomarkers</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_csf}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Blood test results<br />(chemistries, CBCs, etc)</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_blood}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Blood biomarkers for AD</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_bldbiom}</td> </tr> <tr style=""height: 18px;""> <td style=""width: 38.3333%; height: 18px; font-size: 16px;"">Genetics</td> <td style=""width: 58.3333%; height: 18px; text-align: center;"">{partacc_data_genetic}</td> </tr> </tbody> </table> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">Add any additional comments related to ADRC-collected data<br />that will be important for your study</p> <p style=""text-align: center; margin-left: 3%; margin-right: 3%;"">{partacc_data_additional}</p>",,,,,,,[partacc_res_req(1)]=1,,,,,,
+partacc_data_additional,participant_access_request,,notes,"Additional data information",,,,,,,,,,,,,
+partacc_method_details,participant_access_request,,descriptive,"<p style=""border-top: 3px solid black; margin-left: 0%;""> </p><p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;"">Participant Access<br /><br /></p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">Please provide additional details about the nature of your study</p><div style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;""> </div> <table style=""border-collapse: collapse; width: 92%; margin-left: 4%; margin-top: -40px"" border=""0""> <tbody> <tr> <td style=""width: 35.5981%; text-align: left; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p style=""font-size: 20px;"">Study Procedures</p> <p style=""font-size: 18px; margin-left: 10px;"">Briefly describe what will be asked of ADRC participants<br />who join this study. <br />Comment on the time and other issues related to the burden of participating.</p> </td> <td style=""width: 61.3715%; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p>{partacc_procedures}</p> </td> </tr> <tr> <td style=""width: 35.5981%; text-align: left; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p style=""font-size: 20px;"">Recruitment Duration</p> <p style=""font-size: 18px; margin-left: 10px;"">Over how many months will<br />you plan to recruit this cohort?</p> </td> <td style=""width: 61.3715%; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p>{partacc_duration}</p> </td> </tr> <tr> <td style=""width: 38.5981%; text-align: left; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p style=""font-size: 20px;"">Participant Compensation</p> <p style=""font-size: 18px; margin-left: 10px;"">Will subjects be compensated for participating in your study?</p> </td> <td style=""width: 58.3715%; vertical-align: middle; padding-top: 30px; padding-bottom: 30px;""> <p>            {partacc_compensate}</p> <p style=""font-size: 18px; margin-top: -4%;"">        {partacc_comp_note}<br />        {partacc_comp_amt}</p> </td> </tr> </tbody> </table>",,,,,,,[partacc_res_req(2)]=1,,,,,,
+partacc_bank_plasma,participant_access_request,,checkbox,Plasma,"1, <span style=""font-size: 16px"">Plasma",,,,,,,,,,,,
+partacc_bank_plasma_note,participant_access_request,,descriptive,"<div style=""font-size: 18px"">Plasma Volume:  </div>",,,,,,,"[partacc_bank_plasma(1)]=1 AND [partacc_bank_plasma(1)]!=0 AND [partacc_bank_plasma(1)]!=""""",,,,,,
+partacc_bank_plasma_vol,participant_access_request,,text,"Plasma volume",,,,,,,"[partacc_bank_plasma(1)]=1 AND [partacc_bank_plasma(1)]!=0 AND [partacc_bank_plasma(1)]!=""""",,,,,,
+partacc_bank_serum,participant_access_request,,checkbox,Serum,"1, <span style=""font-size: 16px"">Serum",,,,,,,,,,,,
+partacc_bank_serum_note,participant_access_request,,descriptive,"<div style=""font-size: 18px"">Serum Volume:  </div>",,,,,,,"[partacc_bank_serum(1)]!='' AND [partacc_bank_serum(1)]=1",,,,,,
+partacc_bank_serum_vol,participant_access_request,,text,"Serum volume",,,,,,,"[partacc_bank_serum(1)]!='' AND [partacc_bank_serum(1)]=1",,,,,,
+partacc_bank_buffy,participant_access_request,,checkbox,"Buffy coat","1, <span style=""font-size: 16px"">Buffy coat",,,,,,,,,,,,
+partacc_bank_dna,participant_access_request,,checkbox,DNA,"1, <span style=""font-size: 16px"">DNA",,,,,,,,,,,,
+partacc_bank_rna,participant_access_request,,checkbox,RNA,"1, <span style=""font-size: 16px"">RNA",,,,,,,,,,,,
+partacc_bank_csf,participant_access_request,,checkbox,CSF,"1, <span style=""font-size: 16px"">CSF",,,,,,,,,,,,
+partacc_bank_csf_note,participant_access_request,,descriptive,"<div style=""font-size: 18px"">Volume:  </div>",,,,,,,"[partacc_bank_csf(1)]!='' AND [partacc_bank_csf(1)]=1",,,,,,
+partacc_bank_csf_vol,participant_access_request,,text,"CSF volume",,,,,,,"[partacc_bank_csf(1)]!='' AND [partacc_bank_csf(1)]=1",,,,,,
+partacc_bank_urine,participant_access_request,,checkbox,Urine,"1, <span style=""font-size: 16px"">Urine",,,,,,,,,,,,
+partacc_bank_urine_note,participant_access_request,,descriptive,"<div style=""font-size: 18px"">Volume:  </div>",,,,,,,"[partacc_bank_urine(1)]!='' AND [partacc_bank_urine(1)]=1",,,,,,
+partacc_bank_urine_vol,participant_access_request,,text,"Urine volume",,,,,,,"[partacc_bank_urine(1)]!='' AND [partacc_bank_urine(1)]=1",,,,,,
+partacc_bank_pbmc,participant_access_request,,checkbox,PBMCs,"1, <span style=""font-size: 16px"">PBMCs",,,,,,,,,,,,
+partacc_bank_fibro,participant_access_request,,checkbox,Fibroblasts,"1, <span style=""font-size: 16px"">Fibroblasts",,,,,,,,,,,,
+partacc_bank_froz_brain,participant_access_request,,checkbox,"Frozen brain","1, <span style=""font-size: 16px"">Frozen Brain",,,,,,,,,,,,
+partacc_bank_fix_brain,participant_access_request,,checkbox,"Fixed brain","1, <span style=""font-size: 16px"">Fixed Brain",,,,,,,,,,,,
+partacc_bank_paraf_brain,participant_access_request,,checkbox,"Embedded brain","1, <span style=""font-size: 16px"">Paraffin-embedded sections",,,,,,,,,,,,
+partacc_bank_brain_note,participant_access_request,,descriptive,"<div style=""font-size: 18px"">Brain regions:  </div>",,,,,,,"[partacc_bank_froz_brain(1)]='1' OR [partacc_bank_fix_brain(1)]='1' OR [partacc_bank_paraf_brain(1)]='1'",,,,,,
+partacc_bank_brain_sec,participant_access_request,,text,"Brain sections",,,,,,,"[partacc_bank_froz_brain(1)]='1' OR [partacc_bank_fix_brain(1)]='1' OR [partacc_bank_paraf_brain(1)]='1'",,,,,,
+partacc_bank,participant_access_request,,descriptive,"<p style=""border-top: 3px solid black; margin-left: 0%;""> </p> <p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;"">Banked Biospecimens<br /><br /></p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">What banked biospecimens will you need access to?</p> <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%;"">Note that not all biospecimens are available for every<br />participant and requiring some types of specimens <br />may reduce the number of available participants.</p> <table style=""border-collapse: collapse; width: 94%; margin-left: 3%"" border=""0""> <tbody> <tr> <td style=""width: 94%; margin-left: 3%"" colspan=""5""><span style=""font-size: 22px;"">Blood</span></td> </tr> <tr> <td style=""width: 20%;"" valign=""top"">{partacc_bank_plasma}</td> <td style=""width: 20%;"" valign=""top"">{partacc_bank_serum}</td> <td style=""width: 20%;"" valign=""top"">{partacc_bank_buffy}</td> <td style=""width: 20%;"" valign=""top"">{partacc_bank_dna}</td> <td style=""width: 20%;"" valign=""top"">{partacc_bank_rna}</td> </tr> </tbody> </table>",,,,,,,[partacc_res_req(3)]=1,,,,,,
+partac_bank_blood_1,participant_access_request,,descriptive," <table style=""border-collapse: collapse; width: 94%; margin-left: 3%"" border=""0""> <tbody> <tr> <td style=""width: 20%;"" valign=""top"">{partacc_bank_plasma_note}{partacc_bank_plasma_vol}</td> <td style=""width: 20%;"" valign=""top"">{partacc_bank_serum_note}{partacc_bank_serum_vol}</td> <td style=""width: 20%;"" valign=""top""> </td> <td style=""width: 20%;"" valign=""top""> </td> <td style=""width: 20%;"" valign=""top""> </td> </tr> </tbody> </table> 
+
+
+",,,,,,,"[partacc_bank_plasma(1)]=1 OR [partacc_bank_serum(1)]=1",,,,,,
+partacc_bank_1,participant_access_request,,descriptive,"<p style=""border-top: 2px solid black; margin-left: 3%; margin-right: 5%""> </p> <table style=""border-collapse: collapse; width: 94%; margin-left:3%"" border=""0""> <tbody> <tr> <td style=""width: 100%;"" colspan=""3""><span style=""font-size: 22px;"">Other Fluid</span></td> </tr> <tr> <td style=""width: 30%;"" valign=""top"">{partacc_bank_csf}</td> <td style=""width: 30%;"" valign=""top"">{partacc_bank_urine}</td> <td style=""width: 40%;"" valign=""top""> </td> </tr> </tbody> </table> ",,,,,,,[partacc_res_req(3)]=1,,,,,,
+partacc_bank_fluid_1,participant_access_request,,descriptive,"<table style=""border-collapse: collapse; width: 94%; margin-left: 3%;"" border=""0""> <tbody> <tr> <td style=""width: 30%;"" valign=""top"">{partacc_bank_csf_note}{partacc_bank_csf_vol}</td> <td style=""width: 30%;"" valign=""top"">{partacc_bank_urine_note}{partacc_bank_urine_vol}</td> <td style=""width: 40%;"" valign=""top""> </td> </tr> </tbody> </table> <p><br /><br /><br /></p>",,,,,,,"[partacc_bank_csf(1)]=1 OR [partacc_bank_urine(1)]=1",,,,,,
+partacc_bank_2,participant_access_request,,descriptive,"<p style=""border-top: 2px solid black; margin-left: 3%; margin-right: 5%""> </p> <table style=""border-collapse: collapse; width: 94%; margin-left: 3%"" border=""0""> <tbody> <tr> <td style=""width: 100%;"" colspan=""3""><span style=""font-size: 22px;"">Cells</span></td> </tr> <tr> <td style=""width: 30%;"" valign=""top"">{partacc_bank_pbmc}</td> <td style=""width: 30%;"" valign=""top"">{partacc_bank_fibro}</td> <td style=""width: 40%;"" valign=""top""> </td> </tr> </tbody> </table> <p> </p>",,,,,,,[partacc_res_req(3)]=1,,,,,,
+partacc_bank_3,participant_access_request,,descriptive," <p style=""border-top: 2px solid black; margin-left: 3%; margin-right: 5%""> </p> <table style=""border-collapse: collapse; width: 94%; margin-left: 3%"" border=""0""> <tbody> <tr> <td style=""width: 100%;"" colspan=""3""><span style=""font-size: 22px;"">Brain Tissue</span></td> </tr> <tr> <td style=""width: 25%;"" valign=""top"">{partacc_bank_froz_brain}</td> <td style=""width: 25%;"" valign=""top"">{partacc_bank_fix_brain}</td> <td style=""width: 50%;"" valign=""top"">{partacc_bank_paraf_brain}</td> </tr> </tbody> </table>",,,,,,,[partacc_res_req(3)]=1,,,,,,
+partacc_bank_brain_1,participant_access_request,,descriptive,"<table style=""border-collapse: collapse; width: 94%; margin-left: 3%"" border=""0""> <tbody>  <tr> <td style=""width: 100%;"" colspan=""4"">{partacc_bank_brain_note}{partacc_bank_brain_sec}</td> </tr> </tbody> </table> <p> </p>",,,,,,,"[partacc_bank_froz_brain(1)]=1 OR [partacc_bank_fix_brain(1)]=1 OR [partacc_bank_paraf_brain(1)]=1",,,,,,
+partacc_stat_details,participant_access_request,,descriptive,"<p style=""border-top: 3px solid black; margin-left: 0%;""> </p><p> </p> <p style=""font-size: 26px; text-align: center; margin-left: 0%;"">Statistical Support<br /><br /></p>  <p style=""font-size: 20px; text-align: center; margin-left: 3%; margin-right: 3%; margin-top: -5%;"">Have you discussed study design,<br />power, and sample size with a statistician?<br /><div style=""font-size: 26px; text-align: top; margin-left: 3%; margin-right: 3%;""> <p style=""text-align: center; margin-left: 3%; margin-right: 3%;"">{partacc_stat}</p><p style=""font-size: 18px; margin-top: -0%; padding-top: 15px; text-align: center; margin-left: 3%; margin-right: 3%;"">        {partacc_stat_name_note}<br />        {partacc_stat_name}</p></div> </p>",,,,,,,,,,,,,
+partacc_acknowl_head,participant_access_request,,descriptive,"<div style=""padding: 5px; border: solid #000000; margin-left: 3%; margin-right: 3%; margin-top: 15px""><br /> <div style=""font-size: 22px; text-align: center;"">I agree to acknowledge the ADRC (NIH P30AG086401) <br />and, when appropriate, discuss co-authorship with ADRC <br />investigators in all resulting publications/presentations.<br /><br /></div> </div> <p> </p> <p style=""font-size: 26px; text-align: center; margin-left: 3%; margin-right: 3%;"">I agree     {partacc_acknowledge}</p>",,,,,,,,,,,,,
+partacc_acknowledge,participant_access_request,,checkbox,"
+
+<div style=""font-size: 22px; text-align: center"">&nbsp &nbsp I agree </div>
+
+","1,",,,,,,,y,RH,,,,
+partacc_id,request_meta_data,,text,"Access Request ID",,,,,,,,,,,,,
+request_adrc_id,request_meta_data,,text,"<div style=""font-size: 150%"">ADRC specific ID for the resource request
+<ul>
+<li>Used as secondary tracking ID</li>
+<li>Best formatted as ""Last Name""_""ID Number""  
+&nbsp&nbsp&nbspe.g. Smith_001</li>
+</ul>
+",,,,,,,,,,,,,
+requ_pdf_survey,request_meta_data,,file,"<div style=""font-size: 150%"">PDF Version of the Survey",,,,,,,,,,,,,
+requ_initial_header,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+<div style=""font-size: 150%"">
+Initial Steps
+</div>
+<div style=""font-size: 125%"">Common steps immediately after receipt of a data request
+<ul>
+<li>Distribution to admin core / PI contact
+<li>Statistical consultation if required
+<li>Verify feasibility among appropriate core leads
+</ul>
+</div>
+",,,,,,,,,,,,,
+requ_receive_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+Formatted survey has been distributed to:<ul>
+<li>Erik Roberson
+<li>David Geldmacher
+<li>Carol Chambless
+</ul>PI has been contacted to verify receipt
+</div>
+</br>","1, <font style=""font-size: 125%"">Survey forwarded | 2, PI contacted",,,,,,,,,,,,
+requ_receive_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on initial submission and receipt
+</div>
+",,,,,,,,,,,,,
+requ_stats_check,request_meta_data,,checkbox,"</br>
+<div style=""font-size: 125%"">
+The PI has requested a discussion for statistical support 
+
+The core has been alerted to schedule a meeting
+</div>
+</br>","1, <font style=""font-size: 125%"">Statistical core scheduled meeting | 2, Meeting completed",,,,,,"[requ_receive_check(1)]=1 AND [requ_receive_check(2)]=1 AND
+[partacc_stat]!="""" AND [partacc_stat]=""2""",,,,,,
+requ_stats_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on statistical discussion with ADRC
+</div>",,,,,,,"[requ_receive_check(1)]=1 AND [requ_receive_check(2)]=1 AND
+[partacc_stat]!="""" AND [partacc_stat]=""2""",,,,,,
+requ_verify_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+Administrative and Clinical core leads should have an initial discussion to verify feasibility of the current request 
+
+Leads should determine whether the request should proceed, undergo revision, or be declined
+
+Requested data and samples should be validated with appropriate Core leads to verify availability</div>
+
+</br>","1, <font style=""font-size: 125%"">Appropriate Core leads have discussed the current request | 2, Requested samples and sample sizes have been verfied with other Cores",,,,,,"[requ_receive_check(1)]=1 AND [requ_receive_check(2)]=1 AND (([partacc_stat]=""2"" AND [requ_stats_check(1)]=1 AND [requ_stats_check(2)]=1) OR ([partacc_stat]!="""" AND [partacc_stat]=1))",,,,,,
+requ_verify_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on initial verification and moving forward
+</div>",,,,,,,"[requ_receive_check(1)]=1 AND [requ_receive_check(2)]=1 AND (([partacc_stat]=""2"" AND [requ_stats_check(1)]=1 AND [requ_stats_check(2)]=1) OR ([partacc_stat]!="""" AND [partacc_stat]=1))",,,,,,
+requ_initial_yn,request_meta_data,,radio,"<div style=""font-size: 135%""><u>
+Do the core leads support moving forward?</u>
+</div>
+</br>","1, <font style=""font-size: 125%"">Yes, the request may proceed | 0, No, the current request is infeasible",,,,,,"[requ_verify_check(1)]=1 AND [requ_verify_check(2)]=1",,,,,,
+requ_initial_email,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+The PI should be emailed with an update based on the initial decision of the ADRC<ul>
+<li>The request is moving forward
+<li>The request is conditionally proceeding but needs revision
+<li>The request is denied or needs to be resubmitted
+</ul>If the current request is not moving forward, it can be closed after the PI is contacted
+</div>","1, <font style=""font-size: 125%"">The PI has been informed of the initial decision of the ADRC",,,,,,"[requ_initial_yn]!=""""",,,,,,
+requ_feasible_header,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+<div style=""font-size: 150%"">
+Feasibility discussion and project planning
+</div><div style=""font-size: 125%"">
+The investigator has requested:
+[partacc_goal]
+<ul>
+<li>Create ADRC discussion group
+<li>Schedule and conduct meeting
+<li>Identify any follow-up steps
+</ul>
+</div>
+",,,,,,,"[requ_initial_yn]=1 AND
+[partacc_goal]=2",,,,,,
+requ_feas_grp_check,request_meta_data,,checkbox,"<div style=""font-size:125%"">
+
+Appropriate ADRC investigators should be identified and a meeting scheduled with the PI for further discussion
+
+</div>
+</br>","1, <font style=""font-size: 125%"">ADRC Investigators Identified | 2, Discussion meeting scheduled | 3, Meeting completed",,,,,,"[requ_initial_yn]=1 AND
+[partacc_goal]=2",,,,,,
+requ_feas_next,request_meta_data,,notes,"<div style=""font-size: 125%"">
+The current resource request is considered complete follow-up steps may be necessary for the PI
+
+Examples include:<ul><li>Submitting request for letter of intent
+<li>Request for samples or data
+</ul>Please provide any follow-up details or notes from the feasibility discussion
+</div>",,,,,,,"[requ_feas_grp_check(1)]=1 AND [requ_feas_grp_check(2)]=1 AND 
+[requ_feas_grp_check(3)]=1",,,,,,
+requ_feasible_email,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+The PI should be emailed with a follow-up email after the feasibility discussion<ul>
+<li>Details on next steps as needed
+<li>Recommendations provided if necessary
+</ul>The request is closed after contacting the PI 
+</div>","1, <font style=""font-size: 125%"">The PI has been sent a final follow-up email after the feasibility discussion with the ADRC",,,,,,"[requ_feas_grp_check(1)]=1 AND [requ_feas_grp_check(2)]=1 AND 
+[requ_feas_grp_check(3)]=1",,,,,,
+requ_exec_ctme_header,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+<div style=""font-size: 150%"">
+Executive Committee Approval
+</div><div style=""font-size: 125%"">
+ADRC resources or a letter of support have been requested 
+Executive Committee approval is required
+<ul>
+<li>Meet with PI if needed
+<li>Revise request if needed
+<li>Schedule discussion at next Executive Committe meeting
+</ul>
+</div>
+",,,,,,,"[requ_initial_yn]=1 AND [requ_initial_email(1)]=1 AND
+([partacc_goal]=1 OR [partacc_goal]=3)",,,,,,
+requ_exec_pre_mtg_yn,request_meta_data,,radio,"<div style=""font-size:125%"">
+
+Is further discussion between ADRC staff and the PI necessary or minor revisions required prior to the Executive Committee meeting?
+
+</div>
+</br>","1, <font style=""font-size: 125%"">Yes, a meeting or email discussion is needed | 0, No, the request can be presented as is",,,,,,"[requ_initial_yn]=1 AND [requ_initial_email(1)]=1 AND
+([partacc_goal]=1 OR [partacc_goal]=3)",,,,,,
+requ_exec_pre_mtg_check,request_meta_data,,checkbox,"<div style=""font-size:125%"">
+
+Appropriate ADRC staff or required revisions should be identified in advance of presenting to the Executive Committee
+
+A meeting should then be scheduled with the PI or an email discussion initated to address required revisions
+
+</div>
+</br>","1, <font style=""font-size: 125%"">ADRC staff or needed revisions identified | 2, Meeting scheduled or email discussion initiated with PI | 3, Pre-Executive Committee steps completed",,,,,,[requ_exec_pre_mtg_yn]=1,,,,,,
+requ_exec_pre_mtg_notes,request_meta_data,,notes,"<div style=""font-size:125%"">
+
+Notes on ADRC-PI dicussion or revisions prior to Executive Committee meeting
+
+</div>
+</br>",,,,,,,[requ_exec_pre_mtg_yn]=1,,,,,,
+requ_exec_ctme_check,request_meta_data,,checkbox,"<div style=""font-size:125%"">
+
+The finalized request should be revised in REDCap as needed, reformatted, and distributed to the Executive Committee at least one week in advance
+
+At the meeting, the request should be discussed and be either approved or declined
+
+</div>
+</br>","1, <font style=""font-size: 125%"">Request placed on upcoming agenda | 2, Final or revised request sent to Executive Committee in advance | 3, Executive Committee has reached a decision",,,,,,"[requ_exec_pre_mtg_yn]=0 AND [requ_exec_pre_mtg_yn]!="""" OR
+([requ_exec_pre_mtg_check(1)]=1 AND [requ_exec_pre_mtg_check(2)]=1 AND [requ_exec_pre_mtg_check(3)]=1)",,,,,,
+requ_exec_ctme_notes,request_meta_data,,notes,"<div style=""font-size:125%"">
+
+Notes on Executive Committee discussion
+</div>
+</br>",,,,,,,"[requ_exec_pre_mtg_yn]=0 AND [requ_exec_pre_mtg_yn]!="""" OR
+([requ_exec_pre_mtg_check(1)]=1 AND [requ_exec_pre_mtg_check(2)]=1 AND [requ_exec_pre_mtg_check(3)]=1)",,,,,,
+requ_exec_ctme_yn,request_meta_data,,radio,"<div style=""font-size: 135%""><u>
+Does the Executive Committee support moving forward with the request?</u>
+</div>
+</br>","1, <font style=""font-size: 125%"">Yes, the request may proceed | 0, No, the current request is declined",,,,,,[requ_exec_ctme_check(3)]=1,,,,,,
+requ_exec_ctme_email,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+The PI should be emailed with with the decision of the Executive Committee<ul>
+<li>The request has been approved and will move forward
+<li>The request is declined, rationale, and follow-up steps
+</ul>If the current request was declined, it can be closed after the PI is contacted
+</div>","1, <font style=""font-size: 125%"">The PI has been sent a follow-up email after the Executive Committee meeting",,,,,,"[requ_exec_ctme_yn]!=""""",,,,,,
+requ_support_header,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+<div style=""font-size: 150%"">
+Letters of support for upcoming studies
+</div><div style=""font-size: 125%"">
+The investigator has requested:
+[partacc_goal]
+<ul>
+<li>Draft LoS from Administrative Core
+<li>Draft letters from additional ADRC staff or cores as needed
+<li>Provide letters to PI
+</ul>
+</div>
+",,,,,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=3",,,,,,
+requ_support_admin,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+A minimum Letter of Support from the Administrative Core should be drafted for all future collaborations
+</div>
+","1, <font style=""font-size:125%"">A LoS from the Admin Core has been drafted",,,,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=3",,,,,,
+requ_support_other_1,request_meta_data,,text,"<div style=""font-size:125%"">
+How many additional letters of support are <u><i>needed</u></i> from ADRC Core leads or staff?
+
+Enter 0 if no additional letters are needed
+</div>
+",,,integer,0,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=3",,,,,,
+requ_support_other_2,request_meta_data,,text,"<div style=""font-size:125%"">
+How many additional letters of support from the ADRC <u><i>have been drafted</u></i>?
+</div>
+",,,integer,0,,,"[requ_support_other_1]!="""" AND [requ_support_other_1]>0",,,,,,
+requ_support_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on letters of support from the ADRC
+</div>
+",,,,,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=3",,,,,,
+requ_support_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+After all letters are received by the ADRC research coordinator, they should be sent to the PI along with a final email
+
+Once all materials are delivered to the PI, the request can be closed
+</div>
+","1, <font style=""font-size: 125%"">All letters sent to ADRC research coordinator | 2, Letters delivered to PI and request closed",,,,,,"[requ_support_admin(1)]=1 AND [requ_support_other_1]!="""" AND
+([requ_support_other_1]=0 OR ([requ_support_other_1] = [requ_support_other_2]))",,,,,,
+requ_resource_header,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+<div style=""font-size: 150%"">
+Formal resource request or collaboration
+</div><div style=""font-size: 125%"">
+The investigator has requested:
+[partacc_goal]
+<ul>
+<li>Identify and submit any IRB adjustments
+<li>Prepare resources for one-off delivery or recurring schedule
+<li>Provide requested data or physical specimens
+</ul>
+</div>
+",,,,,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=1",,,,,,
+requ_irb_yn,request_meta_data,,radio,"<div style=""font-size: 125%"">
+Are changes to the current IRB protocol necessary either at UAB or at the PI's affiliated institution?
+</div>
+","1, <font style=""font-size:125%"">Yes, IRB revisions are required | 0, No, protocol changes are not required",,,,,,"[requ_exec_ctme_yn]=1 AND
+[requ_exec_ctme_email(1)]=1 AND
+[partacc_goal]=1",,,,,,
+requ_irb_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+Protocol revisions are required and must be approved by the IRB
+<ul>
+<li>Revisions have been submitted
+<li>Final revisions approved
+<li>PI informed of approval and resource delivery process initiated
+</ul><i>Note, this may be an on-going process; protocol revisions at all sites must be approved before resource distribution</i>
+</div>","1, <font style=""font-size: 125%"">Protocol revisions sent to IRB | 2, Final protocol revisions approved | 3, PI informed of approval",,,,,,"[requ_irb_yn]!="""" AND [requ_irb_yn]=1",,,,,,
+requ_irb_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on protocol revisions and IRB approvals
+</div>
+",,,,,,,"[requ_irb_yn]!="""" AND [requ_irb_yn]=1",,,,,,
+requ_schedule_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+A schedule of delivery should be established for the resources and the resources should be verified with the PI based on the Executive Committee decision
+
+This applies to both appropriate ADRC cores (e.g. Data, Neuroimaging) as well as affiliate biospecimen stores (e.g. SPAN)
+<ul>
+<li>Verification of resources to be provided with the PI
+<li>Determine whether resources are delivered once or on a regular schedule
+<li>Establish delivery schedule estimate with ADRC cores
+<li>Set delivery with affiliate banks
+</ul>
+</div>
+","1, <font style=""font-size:125%"">Requested resources verified with PI | 2, Determine whether delivery is once or will be done regularly over the course of a study | 3, Set delivery of resources from ADRC cores | 4, Set schedule with outside labs and banks",,,,,,"[requ_irb_yn]!="""" AND [requ_irb_yn]=0 OR
+([requ_irb_check(1)]=1 AND [requ_irb_check(2)]=1 AND [requ_irb_check(3)]=1)",,,,,,
+requ_schedule_notes,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on scheduling of ADRC resources
+</div>
+",,,,,,,"[requ_irb_yn]!="""" AND [requ_irb_yn]=0 OR
+([requ_irb_check(1)]=1 AND [requ_irb_check(2)]=1 AND [requ_irb_check(3)]=1)",,,,,,
+requ_delivery_check,request_meta_data,,checkbox,"<div style=""font-size: 125%"">
+All requested resources should be delivered or regular delivery established
+<ul>
+<li>Datasets should be curated along with data dictionaries
+<li>Phyical resources shipped from Cores or affiliate specimen banks
+<li>For repeated deliveries, this should be continued as needed
+</ul>After initial delivery, receipt of resources should be verified with the PI; at this stage the request can be closed
+
+Verification of continued delivery should be handled by the appropriate ADRC staff and the PI
+</div>
+","1, <font style=""font-size:125%"">Datasets pulled and delived to the PI | 2, Physical specimens sent to PI | 3, Repeated specimens established | 4, PI contacted and receipt of all data and physical resources verfied",,,,,,"[requ_schedule_check(1)]=1 AND [requ_schedule_check(2)]=1 AND 
+[requ_schedule_check(3)]=1 AND [requ_schedule_check(4)]=1",,,,,,
+requ_schedule_notes_2,request_meta_data,,notes,"<div style=""font-size: 125%"">
+Notes on delivery of requested resources
+</div>
+",,,,,,,"[requ_schedule_check(1)]=1 AND [requ_schedule_check(2)]=1 AND 
+[requ_schedule_check(3)]=1 AND [requ_schedule_check(4)]=1",,,,,,
+requ_complete,request_meta_data,,descriptive,"<div style=""border-top: solid #000000""></div>
+
+<div style=""font-size: 175%"">The request is now completed
+</div>
+</br>",,,,,,,"([requ_initial_yn]=0 AND [requ_initial_email(1)]=1) OR
+([requ_exec_ctme_yn]=0 AND [requ_exec_ctme_email(1)]=1) OR
+([requ_support_check(1)]=1 AND [requ_support_check(2)]=1) OR
+([requ_delivery_check(1)]=1 AND [requ_delivery_check(2)]=1 AND
+[requ_delivery_check(3)]=1 AND [requ_delivery_check(4)]=1)",,,,,,

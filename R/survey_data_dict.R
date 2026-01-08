@@ -61,7 +61,7 @@ data_dict_md_names = list(goal = c("Goal", "Grant Deadline"),
 
 
 
-data_dict_factor = list(partacc_goal = c("Formal requst for ADRC data", "Preliminary inquiry for further discussion", "Request for letter of support"),
+data_dict_factor = list(partacc_goal = c("Formal request for ADRC data", "Preliminary inquiry for further discussion", "Request for letter of support"),
                         partacc_theme_yn = c("Study related to Deep South Disparities", "This study is not related to Deep South disparities"),
                         partacc_fund_source = c("Already funded", "Not yet funded"),
                         partacc_fund_entity = c("NIH funded grant/application", "Extramural (non-NIH) entity", "Intramurally funded"),
