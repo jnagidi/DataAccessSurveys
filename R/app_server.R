@@ -12,30 +12,59 @@ app_server <- function(input, output, session) {
     dir.create(out_dir, recursive = TRUE)
   }
   
+  shiny::addResourcePath("output", out_dir)
+  
   #Reactive to wait until knitting finishes
   html_ready <- reactiveVal(FALSE)
   pdf_ready <- reactiveVal(FALSE)
   
   #Event button to render the markdown survey
+  # observeEvent(input$build_survey, {
+  #   req(input$request_id)
+  #   
+  #   rmarkdown::render(input = app_sys("R/survey_template.Rmd"), 
+  #                     output_file = file.path(out_dir, "survey_template.html"),
+  #                     params = list(id_curr = input$request_id))
+  #   html_ready(TRUE)
+  #   
+  #   #Generate the output that goes to file
+  #   output$html_iframe <- renderUI({
+  #     shiny::req(html_ready())
+  #     tags$iframe(
+  #       src = "output/survey_template.html",
+  #       width = "100%",
+  #       height = "98% !important",
+  #       style = "border: none;"
+  #       )
+  #     })
+  # })
+  
+  output$html_iframe <- renderUI({
+    req(html_ready())
+    req(file.exists(file.path(out_dir, "survey_template.html")))
+    
+    tags$iframe(
+      src = "output/survey_template.html",
+      width = "100%",
+      height = "98%",
+      style = "border: none;"
+    )
+  })
   observeEvent(input$build_survey, {
     req(input$request_id)
     
-    rmarkdown::render(input = app_sys("R/survey_template.Rmd"), 
-                      output_file = file.path(out_dir, "survey_template.html"),
-                      params = list(id_curr = input$request_id))
-    html_ready(TRUE)
+    html_ready(FALSE)
     
-    #Generate the output that goes to file
-    output$html_iframe <- renderUI({
-      shiny::req(html_ready())
-      tags$iframe(
-        src = "output/survey_template.html",
-        width = "100%",
-        height = "98% !important",
-        style = "border: none;"
-        )
-      })
+    rmarkdown::render(
+      input = app_sys("R/survey_template.Rmd"),
+      output_file = file.path(out_dir, "survey_template.html"),
+      params = list(id_curr = input$request_id),
+      quiet = TRUE
+    )
+    
+    html_ready(TRUE)
   })
+  
   
   observeEvent(input$generatePDF, {
     shiny::req(html_ready())
